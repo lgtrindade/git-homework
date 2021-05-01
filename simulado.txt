@@ -1,0 +1,26 @@
+Primeiro são os comandos básicos:
+$variavel da string = fopen("nome do arquvo","modo que o arquivo sera aberto");
+a string que abre o arquivo
+ 
+A função fgets() pega uma linha do arquivo
+$variavel do fgets = fgets($variavel da string, 512);
+ 
+Aqui é a fonte de tudo - a função explode(). Ela interpreta que se tiver uma palavra separada por outra em um caractere determinado essas duas palavras serão variáveis
+ 
+$nomes = explode("caractere separador", $variavel do fgets);
+ 
+Exemplificando, se o seu arquivo texto tem a seguinte linha:
+ 
+"joseph:dionisio:biesek:rocco"
+ 
+Então o script abaixo:
+ 
+<?php
+$nome_arquivo = "teste.txt";
+$fp = fopen($nome_arquivo, "r");
+$linha = fgets($fp, 512);
+$nomes = explode(":", $linha);
+ 
+echo "<pre>n";
+print_r($nomes);
+echo "
